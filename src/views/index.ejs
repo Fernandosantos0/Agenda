@@ -1,0 +1,54 @@
+<%- include('./partials/head') %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <header>
+                <h1 class="text-center">Agenda de Contatos</h1>
+                <p class="text-center lead">Aqui em baixo você terá acesso aos contatos cadastrado</p>
+            </header>
+
+            <%- include('./partials/message') %>
+
+            <% if(contatos.length !== 0) { %>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Sobrenome</th>
+                                <th>Telefone</th>
+                                <th>E-mail</th>
+                                <th colspan="2" class="text-center">Acão</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% contatos.forEach(function(contato) { %>
+                                <tr>
+                                    <td> <%- contato.nome %> </td>
+                                    <td> <%- contato.sobrenome %> </td>
+                                    <td> <%- contato.telefone %> </td>
+                                    <td> <%- contato.email %> </td>
+                                    <td>
+                                        <a href="/contato/edit/<%- contato._id %>"><i class="fa-solid fa-pen"></i> Editar</a>
+                                    </td>
+                                    <td>
+                                        <a href="/contato/remove/<%- contato._id %>" class="text-danger"><i class="fa-solid fa-trash-can"></i> Remover</a>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            <% } else { %>
+                <p>Nenhum contato cadastrado</p>
+            <% } %>
+
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

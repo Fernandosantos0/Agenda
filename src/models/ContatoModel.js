@@ -36,11 +36,12 @@ Contato.prototype.validar = function() {
 };
 
 Contato.findAll = async function() {
-    return await ContatoModel.find().sort({ createdAt: 1 });
+    return await ContatoModel.find().sort({ createdAt: -1 });
 };
 
 Contato.findOne = async function(id) {
-    await ContatoModel.findOne({ _id: id });
+    const contato = await ContatoModel.findOne({ _id: id });
+    return contato;
 };
 
 Contato.delete = async function(id) {

@@ -47,7 +47,7 @@ app.use(cors());
 app.use(helmet());
 
 const sessionObj = session({
-    secret: 'americalatina1',
+    secret: 'jksdhjshfkewoiruoieejkflgdgjuioewkfikgfdjlghçfkjghpotiytpkhtikhopykjhkl',
     resave: false,
     saveUninitialized: false,
     cookie: {

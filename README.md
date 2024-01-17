@@ -5,5 +5,8 @@ Desenvolver um projeto CRUD (Create, Read, Update, Delete) para o cadastro de co
 - Express JS
 - MongoDB
 - Nodemon
+- Bootstrap
+- Webpack
+- EJS
 
 [LICENSE](https://github.com/Fernandosantos0/Agenda/blob/main/LICENSE)
